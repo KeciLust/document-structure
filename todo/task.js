@@ -4,12 +4,12 @@ const button = document.querySelector(`#tasks__add`);
 let remove = [];
 button.addEventListener(`click`, (e) => {
   if (input.value !== ``) {
-    tasks.innerHTML += `<div class="task">
+    tasks.insertAdjacentHTML(`beforeend`, `<div class="task">
 <div class="task__title">
   ${input.value}
 </div>
 <a href="#" class="task__remove">&times;</a>
-</div>`
+</div>`);
   }
   e.preventDefault();
   input.value = ``;

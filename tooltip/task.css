@@ -8,13 +8,13 @@
 }
 
 .tooltip {
-  position: absolute;
+  position: fixed;
   display: none;
   background: black;
   padding: 5px;
   border-radius: 5px;
   color: #fff;
-  /* width: 200px; */
+  
 }
 
 .tooltip_active {
