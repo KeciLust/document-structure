@@ -13,7 +13,8 @@ help.forEach((el, i) => {
       tooltip.textContent = el.title;
       tooltip.style.left = `${el.getBoundingClientRect().left}px`;
       tooltip.style.top = `${el.getBoundingClientRect().top + 15}px`;
-      e.preventDefault();
+     
     }
+    e.preventDefault();
   });
 });
