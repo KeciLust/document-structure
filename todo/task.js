@@ -1,7 +1,6 @@
 const input = document.querySelector(`#task__input`);
 const tasks = document.querySelector(`#tasks__list`);
 const button = document.querySelector(`#tasks__add`);
-let remove = [];
 button.addEventListener(`click`, (e) => {
   if (input.value !== ``) {
     tasks.insertAdjacentHTML(`beforeend`, `<div class="task">
@@ -13,10 +12,7 @@ button.addEventListener(`click`, (e) => {
   }
   e.preventDefault();
   input.value = ``;
-  remove = Array.from(document.querySelectorAll(`.task__remove`));
-  remove.forEach(el => {
-    el.addEventListener(`click`, (e) => {
-      el.closest(`.task`).remove();
-    })
+  tasks.lastChild.querySelector(`.task__remove`).addEventListener(`click`, (e) => {
+    e.target.closest(`.task`).remove();
   })
 });

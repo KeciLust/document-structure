@@ -41,13 +41,10 @@ add.forEach((el, i) => {
 
             }
         }
-        remove.forEach((el, i) => {
-            el.addEventListener(`click`, () => {
-                 el.closest(`.cart__product`).remove();
-                 if(cart.children.length === 0){
-                     cartAll.classList.add(`cart-none`);
-                 }
-            })
-        })
+           cart.lastChild.querySelector(`.cart__product-remove`).addEventListener(`click`, (e) => {
+               e.target.closest(`.cart__product`).remove();
+           })
+
+      
     });
 });

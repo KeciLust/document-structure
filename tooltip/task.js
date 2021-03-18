@@ -4,8 +4,8 @@ tooltip.classList.add(`tooltip`);
 
 help.forEach((el, i) => {
   el.addEventListener(`click`, (e) => {
-   
-    el.appendChild(tooltip);
+    tooltip.classList.remove(`tooltip_active`);
+    el.insertAdjacentElement(`afterend`, tooltip);
     tooltip.classList.toggle(`tooltip_active`);
     tooltip.textContent = el.title;
     tooltip.style.left = `${el.getBoundingClientRect().left}px`;
